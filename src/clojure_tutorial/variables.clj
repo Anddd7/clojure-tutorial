@@ -1,6 +1,8 @@
 (ns clojure-tutorial.variables)
 
-(def ^:dynamic v 1)                                         ; v is a global binding
+; will get an exception if no `^:dynamic`,
+; java.lang.IllegalStateException: Can't dynamically bind non-dynamic var: clojure-tutorial.variables/v
+(def ^:dynamic v 1)                                         ; global binding, mark it as dynamic
 
 (defn f1 []
   (println "f1: v = " v))                                   ; global binding function
