@@ -42,4 +42,9 @@
          (some #(instance? Number %) stooges)               ; get first number
          (not-any? #(instance? Number %) stooges))          ; no one is number; all not number
 
+(println "contains"
+         (contains? stooges "Moe")                          ; not working, it should be index
+         (contains? stooges 1)
+         (contains? (set stooges) "Moe"))
+
 (defn -main [])                                             ; execute all
