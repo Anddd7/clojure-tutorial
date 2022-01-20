@@ -17,9 +17,9 @@
 (def vowel? (set "aeiou"))
 
 ; define function [input]
-(defn pig-latin [word]
+(defn pig-latin [word]                                      ; 全局变量
   ; define variable = first(word)
-  (let [first-letter (first word)]
+  (let [first-letter (first word)]                          ; 当前域的变量, let <vector>, let [<name> value]
     ; if set.contains
     (if (vowel? first-letter)
       ; then str = word + "ay"
