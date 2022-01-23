@@ -17,3 +17,16 @@
 (print "Hello")
 
 (defn -main [])
+
+(defn my-fn [ms]
+  (println "entered my-fn")
+  (Thread/sleep ms)
+  (println "leaving my-fn"))
+
+(let [thread (Thread. #(my-fn 1))]
+  (.start thread)
+  (println "started thread")
+  (while (.isAlive thread)
+    (print ".")
+    (flush))
+  (println "thread stopped"))
